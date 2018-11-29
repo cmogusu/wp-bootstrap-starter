@@ -34,7 +34,7 @@ class display_menu extends post_inner_menu{
     public function display_menu(){
     	global $post;
 
-        if( $this->has_printed_menu_content ){
+        if( !is_singular($post) || is_front_page() || $this->has_printed_menu_content ){
             return '';
         }
 
